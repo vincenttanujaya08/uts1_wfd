@@ -17,7 +17,6 @@ class BookController extends Controller
     public function showBorrowers($id)
     {
         $book = Book::with('borrowers')->findOrFail($id);
-
         return view('library.borrow', compact('book'));
     }
 

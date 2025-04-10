@@ -15,4 +15,4 @@ Route::get('/books/{id}/borrow', [BookController::class, 'showForm'])->name('boo
 
 Route::post('/borrowers', [BorrowerController::class, 'borrowing'])->name('borrower.start');
 Route::put('/borrowers/{id}/return', [BorrowerController::class, 'returning'])->name('borrower.return');
-Route::delete('/borrowers/{id}', [BorrowerController::class, 'delete']);
+Route::delete('/borrowers/{id}', [BorrowerController::class, 'delete'])->name('borrower.delete');

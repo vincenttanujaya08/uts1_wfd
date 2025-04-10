@@ -41,6 +41,12 @@
                             @method('PUT')
                             <button type="submit" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded w-max">Return Book</button>
                         </form>
+
+                        <form action="{{ route('borrower.delete', $borrower->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-max">Delete Borrower</button>
+                        </form>
                         @endif
                     </td>
 
