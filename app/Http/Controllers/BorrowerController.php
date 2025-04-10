@@ -60,6 +60,12 @@ class BorrowerController extends Controller
     {
         $borrow = Borrower::findOrFail($id);
         $borrow->delete();
+        $book = Book::findOrFail($borrow->book_id);
+
+        $book->update([
+            'status' => 'available',
+        ]);
+
         return redirect()->route('book.show');
     }
 }
